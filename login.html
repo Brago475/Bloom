@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bloom Login</title>
+    <link rel="stylesheet" href="styles/nav.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-box login">
+        <form action="login.php" method="POST">
+          <img src="assets/Bloom.png" alt="Bloom Logo" class="logo" /> 
+        <h1>Login</h1>
+          <div class="input-box">
+            <input type="text" name="username" placeholder="Username" required />
+            <i class="bx bxs-user"></i>
+          </div>
+          <div class="input-box">
+            <input type="password" name="password" placeholder="Password" required />
+            <i class="bx bxs-lock-alt"></i>
+          </div>
+          <div class="forgot-link">
+            <a href="#">Forgot Password?</a>
+          </div>
+          <button type="submit" class="btn">Login</button>
+          <p>Or use a different login method</p>
+          <div class="social-icons">
+            <a href="#"><i class="bx bxl-google"></i></a>
+            <a href="#"><i class="bx bxl-discord-alt"></i></a>
+            <a href="#"><i class="bx bxl-facebook-circle"></i></a>
+          </div>
+        </form>
+      </div>
+
+      <div class="form-box register">
+        <form id="multiStepForm" action="register.php" method="POST">
+          <div id="step-tracker">Step 1 of 3</div>
+          <div id="form-error-banner" class="hidden">
+            ⚠️ Errors found, please fix before continuing.
+          </div>
+        <img src="assets/Bloom.png" alt="Bloom Logo" class="logo" /> 
+          <h1>Register</h1>
+
+          
+          <div class="form-step active">
+            <div class="input-box">
+              <input
+                type="text"
+                name="Fname"
+                placeholder="First Name"
+                required
+              />
+              <i class="bx bxs-user"></i>
+              <span class="valid-icon">✅</span>
+              <span class="error-popup"
+                >First name must be at least 2 characters.</span
+              >
+            </div>
+            <div class="input-box">
+              <input
+                type="text"
+                name="Lname"
+                placeholder="Last Name"
+                required
+              />
+              <i class="bx bxs-user"></i>
+              <span class="valid-icon">✅</span>
+              <span class="error-popup"
+                >Last name must be at least 3 characters.</span
+              >
+            </div>
+            <div class="input-box">
+              <input
+                type="date"
+                name="DOB"
+                placeholder="Date of Birth"
+                required
+              />
+              <i class="bx bxs-calendar"></i>
+              <span class="valid-icon">✅</span>
+              <span class="error-popup"
+                >You must be at least 16 years old.</span
+              >
+            </div>
+            <button type="button" class="btn next-btn">Next</button>
+          </div>
+
+          <div class="form-step">
+            <div class="input-box">
+              <input
+                type="text"
+                name="username"
+                placeholder="Create Username"
+                required
+              />
+              <i class="bx bxs-user"></i>
+              <span class="valid-icon">✅</span>
+              <span class="error-popup"
+                >Username must be at least 3 characters.</span
+              >
+            </div>
+            <div class="input-box">
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter Email"
+                required
+              />
+              <i class="bx bxs-envelope"></i>
+              <span class="valid-icon">✅</span>
+              <span class="error-popup">Invalid email format.</span>
+            </div>
+            <div class="input-box">
+              <input
+                type="tel"
+                name="phone_number"
+                placeholder="Phone Number"
+              />
+              <i class="bx bxs-phone"></i>
+              <span class="valid-icon">✅</span>
+              <span class="error-popup"
+                >Phone number must be 10–15 digits.</span
+              >
+            </div>
+            <div class="input-box">
+              <select name="security_question" required  title="question">
+                <option value="">Security Question</option>
+                <option value="1001">Pet's Name?</option>
+                <option value="1002">Mother’s Maiden Name?</option>
+                <option value="1003">First School?</option>
+                <option value="1004">Favorite Food?</option>
+              </select>
+              <i class="bx bxs-help-circle"></i>
+              <span class="valid-icon">✅</span>
+              <span class="error-popup"
+                >Please select a security question.</span
+              >
+            </div>
+            <div class="input-box">
+              <input
+                type="text"
+                name="security_answer"
+                placeholder="Answer"
+                required
+              />
+              <i class="bx bxs-key"></i>
+              <span class="valid-icon">✅</span>
+              <span class="error-popup"
+                >Answer must be at least 4 characters and contain only
+                letters.</span
+              >
+            </div>
+            <div class="step-buttons">
+              <button type="button" class="btn prev-btn">Back</button>
+              <button type="button" class="btn next-btn">Next</button>
+            </div>
+          </div>
+
+         
+          <div class="form-step">
+            <div class="input-box">
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+              />
+              <i class="bx bxs-lock-alt"></i>
+              <span class="valid-icon">✅</span>
+              <span class="error-popup"
+                >Password must be 10+ characters with uppercase, lowercase,
+                number, and special character.</span
+              >
+            </div>
+            <div class="input-box">
+              <input
+                type="password"
+                name="confirm_password"
+                placeholder="Confirm Password"
+                required
+              />
+              <i class="bx bxs-lock-alt"></i>
+              <span class="valid-icon">✅</span>
+              <span class="error-popup">Passwords do not match.</span>
+            </div>
+            <div class="step-buttons">
+              <button type="button" class="btn prev-btn">Back</button>
+              <button type="submit" class="btn">Register</button>
+            </div>
+          </div>
+          <p>Or use a different registration method</p>
+          <div class="social-icons">
+            <a href="#"><i class="bx bxl-google"></i></a>
+            <a href="#"><i class="bx bxl-discord-alt"></i></a>
+            <a href="#"><i class="bx bxl-facebook-circle"></i></a>
+          </div>
+        </form>
+      </div>
+
+      <div class="toggle-box">
+        <div class="toggle-panel toggle-left">
+          <h1>Hello again!</h1>
+          <p>Don't have an account?</p>
+          <button class="btn register-btn">Register</button>
+        </div>
+        <div class="toggle-panel toggle-right">
+          <h1>Welcome</h1>
+          <p>Already have an account?</p>
+          <button class="btn login-btn">Login</button>
+        </div>
+      </div>
+    </div>
+
+  <script src="js/postInteractions.js"></script>
+  <script src="js/postActions.js"></script>
+  <script src="js/toggleForms.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="js/nav.js"></script>
+    
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
